@@ -11,7 +11,7 @@ This project uses:
 
 - Java 1.7+
 - Git
-- Maven 3.03+
+- Apache Maven
 
 To install Git (on Mac)::
 
@@ -32,3 +32,6 @@ You can run the web app locally using the embedded Jetty instance::
 
     mvn jetty:run
 
+By default the webapp will run on port 8000:
+
+http://localhost:8000/bootstrap-webapp/
