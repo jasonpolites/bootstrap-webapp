@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <script type="application/javascript">
+
+        $(document).ready(function () {
+            $("#btnMain").click(function () {
+                $.ajax({
+                    url: "api/view?id=" + parseInt(new Date().getSeconds())
+                }).done(function (result) {
+                    $("#result").text(JSON.stringify(result, null, 4));
+                }).fail(function(result) {
+                    alert( "Error!" );
+                });
+            })});
+    </script>
+</head>
+<body>
+<div class="container">
+    <h2>Bootstrap Webapp</h2>
+    <button type="button" class="btn btn-primary" id="btnMain">Click Me!</button>
+</div>
+<p></p>
+<div class="container">
+    <code id="result">Results go here!</code>
+</div>
+</body>
+</html>
