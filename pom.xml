@@ -13,7 +13,6 @@
     <properties>
         <spring.version>3.2.6.RELEASE</spring.version>
         <spring.aop.version>3.2.6.RELEASE</spring.aop.version>
-        <powermock.version>1.5.1</powermock.version>
         <jacoco.version>0.6.3.201306030806</jacoco.version>
         <findbugs.version>2.5.2</findbugs.version>
         <jetty.version>8.1.13.v20130916</jetty.version>
@@ -22,17 +21,28 @@
 
     <dependencies>
 
+        <!-- Spring -->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!--
+        The Servlet and JSP APIs are required at compile time,
+        but will be provided by the container at runtime
+        -->
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -48,32 +58,9 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
 
-        <!-- Spring AOP + AspectJ -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>${spring.aop.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.7.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.7.4</version>
-        </dependency>
-
-        <!-- Jackson JSON Mapper -->
+        <!-- Jackson JSON Mapper, used for JSON parsing -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
@@ -86,7 +73,7 @@
             <version>1.1.1</version>
         </dependency>
 
-        <!-- Spring uses in the webapp-->
+        <!-- Spring uses SL4J in the webapp-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -98,6 +85,8 @@
             <version>1.7.5</version>
         </dependency>
 
+
+        <!-- Dependencies used for Tests only -->
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -131,7 +120,6 @@
             <version>0.9.0</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path-assert</artifactId>
@@ -140,6 +128,8 @@
         </dependency>
 
     </dependencies>
+
+
     <build>
         <finalName>bootstrap-webapp</finalName>
 
