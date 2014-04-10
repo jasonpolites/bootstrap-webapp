@@ -49,3 +49,28 @@ This will produce a war file in the *target* folder called **bootstrap-webapp.wa
 
 You will notice that this also runs all the tests and performs all other verification tasks.
 More about this below...
+
+Running the Tests
+=================
+
+To run the tests for the project and any other build time checks, run the maven *verify* command::
+
+    mvn clean verify
+
+This will cause the entire build to fail if **any** of the following checks fails:
+
+- A test fails
+- Checkstyle rules are breached (including PMD and CMD)
+- Findbugs rules are breached
+- Code coverage falls below prescribed levels (80% for line coverage, 75% for branch coverage)
+
+Viewing Test Output
+===================
+
+If a build fails due to any of the build-time checks failing, you can see the details of the failure
+by creating the "site" produced by maven::
+
+    mvn site
+
+*Note*: This will use report files generated when the *verify* command was executed, so **don't** execute a *clean*
+before you run the *site* command.
