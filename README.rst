@@ -40,6 +40,10 @@ By default the webapp will run on port 8080:
 
 http://localhost:8080/bootstrap-webapp/
 
+You should see something like this:
+
+.. image:: http://cl.ly/image/2q1h1Z3B0w1h/bootstrap-webapp.png
+
 Building the Package
 ====================
 
@@ -80,6 +84,10 @@ The site will be generated in the *target* folder::
     open target/site/index.html
 
 Then browse to the **Project Reports** section.
+
+You should see something like this:
+
+.. image:: http://cl.ly/image/2H3W0J3d251v/bootstrap-webapp_reports.png
 
 *Note*: This will use report files generated when the *verify* command was executed, so **don't** execute a *clean*
 before you run the *site* command.
