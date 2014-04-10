@@ -75,5 +75,11 @@ by creating the "site" produced by maven::
 
     mvn site
 
+The site will be generated in the *target* folder::
+
+    open target/site/index.html
+
+Then browse to the **Project Reports** section.
+
 *Note*: This will use report files generated when the *verify* command was executed, so **don't** execute a *clean*
 before you run the *site* command.
