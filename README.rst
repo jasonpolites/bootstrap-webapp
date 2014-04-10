@@ -67,7 +67,9 @@ To run the tests for the project and any other build time checks, run the maven 
 This will cause the entire build to fail if **any** of the following checks fails:
 
 - A test fails
-- Checkstyle rules are breached (including PMD and CMD)
+- Checkstyle rules are breached
+- PMD rules are breached (Static Code Analysis)
+- CPD rules are breached (Code Duplication)
 - Findbugs rules are breached
 - Code coverage falls below prescribed levels (80% for line coverage, 75% for branch coverage)
 
