@@ -43,6 +43,9 @@ Building the Package
 To package up the webapp as a WAR file for deployment into your container of choice,
 simply run the maven *package* command::
 
-    mvn package
+    mvn clean package
 
 This will produce a war file in the *target* folder called **bootstrap-webapp.war**
+
+You will notice that this also runs all the tests and performs all other verification tasks.
+More about this below...
