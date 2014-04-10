@@ -30,8 +30,19 @@ If you haven't already, clone this repo onto your local file system::
 
 You can run the web app locally using the embedded Jetty instance::
 
+    cd bootstrap-webapp
     mvn jetty:run
 
-By default the webapp will run on port 8000:
+By default the webapp will run on port 8080:
 
-http://localhost:8000/bootstrap-webapp/
+http://localhost:8080/bootstrap-webapp/
+
+Building the Package
+====================
+
+To package up the webapp as a WAR file for deployment into your container of choice,
+simply run the maven *package* command::
+
+    mvn package
+
+This will produce a war file in the *target* folder called **bootstrap-webapp.war**
